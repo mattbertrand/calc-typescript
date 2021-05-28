@@ -6,7 +6,16 @@ function main(): void
     const operator: string = question('Enter operator:\n')
     const secondStr: string = question('Enter second number:\n')
 
-    console.log(firstStr, operator, secondStr)
+    const firstNum = isNumber(firstStr)
+
+    console.log(firstNum)
+}
+
+function isNumber(str: string): boolean
+{
+    const maybeNum = parseInt(str)
+    const isNum: boolean = !isNaN(maybeNum)
+    return isNum
 }
 
 main()

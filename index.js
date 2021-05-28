@@ -5,6 +5,12 @@ function main() {
     var firstStr = readline_sync_1.question('Enter first number:\n');
     var operator = readline_sync_1.question('Enter operator:\n');
     var secondStr = readline_sync_1.question('Enter second number:\n');
-    console.log(firstStr, operator, secondStr);
+    var firstNum = isNumber(firstStr);
+    console.log(firstNum);
+}
+function isNumber(str) {
+    var maybeNum = parseInt(str);
+    var isNum = !isNaN(maybeNum);
+    return isNum;
 }
 main();
