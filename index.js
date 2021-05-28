@@ -6,7 +6,19 @@ function main() {
     var operator = readline_sync_1.question('Enter operator:\n');
     var secondStr = readline_sync_1.question('Enter second number:\n');
     var firstNum = isNumber(firstStr);
-    console.log(firstNum);
+    var op = isOperator(operator);
+    console.log(op);
+}
+function isOperator(operator) {
+    switch (operator) {
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+            return true;
+        default:
+            return false;
+    }
 }
 function isNumber(str) {
     var maybeNum = parseInt(str);

@@ -8,7 +8,22 @@ function main(): void
 
     const firstNum = isNumber(firstStr)
 
-    console.log(firstNum)
+    const op = isOperator(operator)
+
+    console.log(op)
+}
+
+function isOperator(operator: string): boolean
+{
+    switch(operator){
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+            return true
+        default:
+            return false
+    }
 }
 
 function isNumber(str: string): boolean
