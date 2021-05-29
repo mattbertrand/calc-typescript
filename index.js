@@ -7,8 +7,31 @@ function main() {
     var secondStr = readline_sync_1.question('Enter second number:\n');
     var firstNum = isNumber(firstStr);
     var op = isOperator(operator);
-    console.log(op);
+    var validInput = isNumber(firstStr) && isOperator(operator) && isNumber(secondStr);
+    if (validInput) {
+        var firstNum_1 = parseInt(firstStr);
+        var secondNum = parseInt(secondStr);
+        var result = calculate(firstNum_1, operator, secondNum);
+        console.log(result);
+    }
+    else {
+        console.log('\nInvalid Input\n');
+        main();
+    }
 }
+function calculate(firstNum, operator, secondNum) {
+    switch (operator) {
+        case '+':
+            return firstNum + secondNum;
+        case '-':
+            return firstNum - secondNum;
+        case '*':
+            return firstNum * secondNum;
+        case '/':
+            return firstNum / secondNum;
+    }
+}
+;
 function isOperator(operator) {
     switch (operator) {
         case '+':
